@@ -1,4 +1,4 @@
-package com.foodmenu.view;
+package com.foodmenuclient.view;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -7,6 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.io.IOException;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -28,24 +29,21 @@ import javax.swing.table.DefaultTableModel;
 
 import org.apache.log4j.Logger;
 
-import com.foodmenu.model.business.exceptions.ServiceLoadException;
-import com.foodmenu.model.business.managers.DayMenuManager;
-import com.foodmenu.model.business.managers.MenuItemManager;
 import com.foodmenu.model.domain.DayMenu;
 import com.foodmenu.model.domain.MenuItem;
-import com.foodmenu.model.services.exceptions.DayMenuServiceException;
-import com.foodmenu.model.services.exceptions.FoodItemServiceException;
-import com.foodmenu.model.services.exceptions.MenuItemServiceException;
-import com.foodmenu.view.tableModels.MenuItemsTableModel;
+import com.foodmenuclient.controller.AuthenticationClient;
+import com.foodmenuclient.controller.FoodMenuClient;
+import com.foodmenuclient.view.tableModels.MenuItemsTableModel;
 
 public class CreateDayMenuJFrame extends JFrame {
 	
 	private static Logger LOGGER = Logger.getLogger(CreateDayMenuJFrame.class);
 	
+	private FoodMenuClient foodMenuClient;
+	
 	private MenuItemsTableModel allMenuItemsModel = new MenuItemsTableModel();
 	private MenuItemsTableModel selectedMenuItemsModel = new MenuItemsTableModel();
 	
-	private MenuItemManager menuItemManager = new MenuItemManager();
 	
 	private ArrayList<MenuItem> allMenuItems = new ArrayList<MenuItem>();
 	private ArrayList<MenuItem> selectedMenuItems = new ArrayList<MenuItem>();
@@ -57,10 +55,14 @@ public class CreateDayMenuJFrame extends JFrame {
 	private JTextField complexityValueField;
 	private JSpinner spinner;
 	
-	private int[] allMenuItemsRows = null;
+	private int[] allMenuItemsRows = null; 
 	private int[] selectedMenuItemsRows = null;
 	private int complexityValue = 0;
 	private double healthValue = 0.0;
+	
+	public void setupCreateDayMenuJFrame(FoodMenuClient foodMenuClient) {
+		this.foodMenuClient = foodMenuClient;
+	}
 	
 	public CreateDayMenuJFrame() {
 		super("Create Menu Item");
@@ -71,8 +73,8 @@ public class CreateDayMenuJFrame extends JFrame {
 		getContentPane().setLayout(null);
 		
 		try {
-			allMenuItems = menuItemManager.retrieveAllMenuItems();
-		} catch (ServiceLoadException | FoodItemServiceException | MenuItemServiceException e) {
+			allMenuItems = foodMenuClient.retrieveAllMenuItem();
+		} catch (ClassNotFoundException | IOException e)  {
 			e.printStackTrace();
 		};
         
@@ -211,14 +213,13 @@ public class CreateDayMenuJFrame extends JFrame {
 			}
 			
 			LOGGER.info("Instantiating DayMenuManager Object ");
-			DayMenuManager dayMenuManager = new DayMenuManager();
 			
 			try {
-				if(!dayMenuManager.addNewDayMenu(dayMenu)) {
+				if(!foodMenuClient.createDayMenu(dayMenu)) {
 					JOptionPane.showMessageDialog(null, "System Failed to Create Day Menu!");
 					LOGGER.error("System failed to create the add the DayMenu Object to the database");
 				}
-			} catch (ServiceLoadException | HeadlessException | DayMenuServiceException e1) {
+			} catch (ClassNotFoundException | IOException e1)  {
 				e1.printStackTrace();
 			}
 			
@@ -243,12 +244,12 @@ public class CreateDayMenuJFrame extends JFrame {
 			for(int i : allMenuItemsRows ) {
 				menuName = allMenuItemsTable.getModel().getValueAt(i, 0).toString();
 				try {
-					menuItem = menuItemManager.retrieveMenuItem(menuName);
+					menuItem = foodMenuClient.retrieveMenuItem(menuName);
 					selectedMenuItems.add(menuItem);
 					
 					selectedMenuItemsModel.setMenuItems(selectedMenuItems);
 					selectedMenuItemsModel.fireTableDataChanged();
-				} catch (ServiceLoadException | FoodItemServiceException | MenuItemServiceException e1) {
+				} catch (ClassNotFoundException | IOException e1)  {
 					e1.printStackTrace();
 				}
 			}
@@ -296,13 +297,13 @@ public class CreateDayMenuJFrame extends JFrame {
 			for(int i : selectedMenuItemsRows ) {
 				menuName = selectedMenuItemsTable.getModel().getValueAt(i, 0).toString();
 				try {
-					menuItem = menuItemManager.retrieveMenuItem(menuName);
+					menuItem = foodMenuClient.retrieveMenuItem(menuName);
 					
 					allMenuItems.add(menuItem);
 					
 					allMenuItemsModel.setMenuItems(allMenuItems);
 					allMenuItemsModel.fireTableDataChanged();
-				} catch (ServiceLoadException | FoodItemServiceException | MenuItemServiceException e1) {
+				} catch (ClassNotFoundException | IOException e1)  {
 					e1.printStackTrace();
 				}
 			}

@@ -42,20 +42,20 @@ public class MainUI {
 	}
 
 	public static void view() throws IOException {
-//		LoginJFrame loginJFrame = new LoginJFrame();
-//		loginJFrame.setVisible(true);
+		LoginJFrame loginJFrame = new LoginJFrame();
+		loginJFrame.setVisible(true);
 //		
-		User user = new User("Zach", "Stanfill", "zstanfill@regis.edu", "ghostbuster", 29, "admin");
-		
-		FoodMenuJFrame foodMenuJFrame = new FoodMenuJFrame();
-		
-		try {
-			foodMenuJFrame.setUser(user);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-		foodMenuJFrame.setVisible(true);
+//		User user = new User("Zach", "Stanfill", "zstanfill@regis.edu", "ghostbuster", 29, "admin");
+//		
+//		FoodMenuJFrame foodMenuJFrame = new FoodMenuJFrame();
+//		
+//		try {
+//			foodMenuJFrame.setUser(user);
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//		
+//		foodMenuJFrame.setVisible(true);
 	}
 
 }

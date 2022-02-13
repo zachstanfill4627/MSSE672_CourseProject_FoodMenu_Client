@@ -1,4 +1,4 @@
-package com.foodmenu.view;
+package com.foodmenuclient.view;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -6,6 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
@@ -24,14 +25,10 @@ import javax.swing.table.DefaultTableModel;
 
 import org.apache.log4j.Logger;
 
-import com.foodmenu.model.business.exceptions.ServiceLoadException;
-import com.foodmenu.model.business.managers.FoodItemManager;
-import com.foodmenu.model.business.managers.MenuItemManager;
 import com.foodmenu.model.domain.FoodItem;
 import com.foodmenu.model.domain.MenuItem;
-import com.foodmenu.model.services.exceptions.FoodItemServiceException;
-import com.foodmenu.model.services.exceptions.MenuItemServiceException;
-import com.foodmenu.view.tableModels.FoodItemsTableModel;
+import com.foodmenuclient.controller.FoodMenuClient;
+import com.foodmenuclient.view.tableModels.FoodItemsTableModel;
 
 public class CreateMenuItemJFrame extends JFrame {
 	
@@ -40,8 +37,7 @@ public class CreateMenuItemJFrame extends JFrame {
 	private FoodItemsTableModel allFoodItemsModel = new FoodItemsTableModel();
 	private FoodItemsTableModel selectedFoodItemsModel = new FoodItemsTableModel();
 	
-	private FoodItemManager foodItemManager = new FoodItemManager();
-	private MenuItemManager menuItemManager = new MenuItemManager();
+	private FoodMenuClient foodMenuClient;
 	
 	private ArrayList<FoodItem> allFoodItems = new ArrayList<FoodItem>();
 	private ArrayList<FoodItem> selectedFoodItems = new ArrayList<FoodItem>();
@@ -57,6 +53,10 @@ public class CreateMenuItemJFrame extends JFrame {
 	private int[] allFoodItemsRows = null;
 	private int[] selectedFoodItemsRows = null;
 	private double healthValue = 0.0;
+	
+	public void setupCreateMenuItemJFrame(FoodMenuClient foodMenuClient) {
+		this.foodMenuClient = foodMenuClient;
+	}
 
 	public CreateMenuItemJFrame() {
 		super("Create Menu Item");
@@ -68,11 +68,11 @@ public class CreateMenuItemJFrame extends JFrame {
 		
 		try {
 			LOGGER.trace("Retrieving AllFoodItems");
-			allFoodItems = foodItemManager.retrieveAllFoodItems();
+			allFoodItems = foodMenuClient.retrieveAllFoodItem();
 			LOGGER.trace("Successfully Retrieved AllFoodItems");
 			LOGGER.debug("Listing AllFoodItems:");
 			allFoodItems.forEach(item -> LOGGER.debug("----Item----" + item.getFoodName()));
-		} catch (ServiceLoadException | FoodItemServiceException e) {
+		} catch (ClassNotFoundException | IOException e)  {
 			e.printStackTrace();
 		};
 		
@@ -203,17 +203,16 @@ public class CreateMenuItemJFrame extends JFrame {
 			LOGGER.trace("Successfully Validated MenuItem Object");
 			
 			LOGGER.trace("Instantiating MenuItemManager");
-			MenuItemManager menuItemManager = new MenuItemManager();
 			LOGGER.trace("Completed Instantiating MenuItemManager");
 			
 			try {
 				LOGGER.trace(String.format("Attempting to add MenuItem %s to MenuItems Database", mealName));
-				if(!menuItemManager.addNewMenuItem(menuItem)) {
+				if(!foodMenuClient.createMenuItem(menuItem)) {
 					JOptionPane.showMessageDialog(null, "System Failed to Create Menu Item!");
 					LOGGER.error(String.format("System Failed to add MenuItem %s to MenuItems Database", mealName));
 				}
 				LOGGER.trace(String.format("Successfully added MenuItem %s to MenuItems Database", mealName));
-			} catch (ServiceLoadException | MenuItemServiceException e1) {
+			} catch (ClassNotFoundException | IOException e1)  {
 				e1.printStackTrace();
 			}
 			
@@ -238,12 +237,12 @@ public class CreateMenuItemJFrame extends JFrame {
 			for(int i : allFoodItemsRows ) {
 				foodName = allFoodItemsTable.getModel().getValueAt(i, 0).toString();
 				try {
-					foodItem = foodItemManager.retrieveFoodItem(foodName);
+					foodItem = foodMenuClient.retrieveFoodItem(foodName);
 					selectedFoodItems.add(foodItem);
 					
 					selectedFoodItemsModel.setFoodItems(selectedFoodItems);
 					selectedFoodItemsModel.fireTableDataChanged();
-				} catch (ServiceLoadException | FoodItemServiceException e1) {
+				} catch (ClassNotFoundException | IOException e1)  {
 					e1.printStackTrace();
 				}
 			}
@@ -286,13 +285,13 @@ public class CreateMenuItemJFrame extends JFrame {
 			for(int i : selectedFoodItemsRows ) {
 				foodName = selectedFoodItemsTable.getModel().getValueAt(i, 0).toString();
 				try {
-					foodItem = foodItemManager.retrieveFoodItem(foodName);
+					foodItem = foodMenuClient.retrieveFoodItem(foodName);
 					
 					allFoodItems.add(foodItem);
 					
 					allFoodItemsModel.setFoodItems(allFoodItems);
 					allFoodItemsModel.fireTableDataChanged();
-				} catch (ServiceLoadException | FoodItemServiceException e1) {
+				} catch (ClassNotFoundException | IOException e1)  {
 					e1.printStackTrace();
 				}
 			}

@@ -13,7 +13,8 @@ import com.foodmenu.model.domain.*;
 
 public class FoodMenuClient {
 	
-	private User user = null;
+	private String email = "";
+	private String sessionKey = "";
 	
 	private Socket socket = null;
     private OutputStream outputStream;
@@ -22,13 +23,14 @@ public class FoodMenuClient {
     private ObjectInputStream objectInputStream;
 	
 	// Default Constructor 
-	public FoodMenuClient(User user) {
-		this.user = user;
+	public FoodMenuClient(String email, String sessionKey) {
+		this.email = email;
+		this.sessionKey = sessionKey;
 	}
 	
 	public void openConnection() throws UnknownHostException, IOException, Exception {
 		
-		if(user == null) {
+		if(email.equals("") || sessionKey.equals("")) {
 			throw new Exception ("FoodMenuClient.openConnection: Cannot open connection because no users has been set!");
 		}
 		
@@ -40,8 +42,12 @@ public class FoodMenuClient {
         // create a DataInputStream so we can read data from it.
         this.objectOutputStream =  new ObjectOutputStream(outputStream);
         this.objectInputStream = new ObjectInputStream(inputStream);
-        
-        objectOutputStream.writeObject(user);
+
+		UserWrapper userWrapper = new UserWrapper();
+		userWrapper.setEmail(email);
+		userWrapper.setAuthToken(sessionKey);
+		
+        objectOutputStream.writeObject(userWrapper);
 	}
 	
 	public void closeConnection() throws IOException {

@@ -39,7 +39,10 @@ public class FoodMenuJFrame extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	
-	private User activeUser = null;
+//	private User activeUser = null;
+	private String email = "";
+	private String sessionKey = "";
+	
 	
 	private User selectedUser = null;
 	private FoodItem selectedFoodItem = null;
@@ -72,31 +75,32 @@ public class FoodMenuJFrame extends JFrame {
 	private JTable dayMenuFoodItemsTable;
 	private JTable dayMenuIngredientsTable;
 	
-    public void setUser(User user) throws ClassNotFoundException, IOException, Exception {
+    public void setUser(String email, String sessionKey) throws ClassNotFoundException, IOException, Exception {
     	LOGGER.trace("Setting User for Session");
-        this.activeUser = user;
-        LOGGER.info(String.format("Set User %s for Session", user.getEmailAddress()));
+    	this.email = email;
+    	this.sessionKey = sessionKey;
+        LOGGER.info(String.format("Set User %s for Session", email));
         
         LOGGER.trace("Instantiate FoodMenuClient");
-        foodMenuClient = new FoodMenuClient(user);
+        foodMenuClient = new FoodMenuClient(email, sessionKey);
         
         foodMenuClient.openConnection();
         
         LOGGER.trace("Retrieve All Users for UsersTab_UsersTable");
         usersModel.setUsers(foodMenuClient.retrieveAllUsers());
-		LOGGER.info(String.format("Successfully retrieved Users for User %s session", user.getEmailAddress()));
+		LOGGER.info(String.format("Successfully retrieved Users for User %s session", email));
         
         LOGGER.trace("Retrieve All FoodItems for FoodItemsTables");
 		foodItemsModel.setFoodItems(foodMenuClient.retrieveAllFoodItem());
-		LOGGER.info(String.format("Successfully retrieved FoodItems for User %s session", user.getEmailAddress()));
+		LOGGER.info(String.format("Successfully retrieved FoodItems for User %s session", email));
         
         LOGGER.trace("Retrieve All MenuItems for MenuItemsTables");
 		menuItemsModel.setMenuItems(foodMenuClient.retrieveAllMenuItem());
-		LOGGER.info(String.format("Successfully retrieved MenuItems for User %s session", user.getEmailAddress()));
+		LOGGER.info(String.format("Successfully retrieved MenuItems for User %s session", email));
 		
         LOGGER.trace("Retrieve All DayMenus for the DayMenuTable");
 		dayMenuModel.setDayMenus(foodMenuClient.retrieveAllDayMenu());
-		LOGGER.info(String.format("Successfully retrieved DayMenus for User %s session", user.getEmailAddress()));
+		LOGGER.info(String.format("Successfully retrieved DayMenus for User %s session", email));
 		
         LOGGER.trace("Completed Set User for Session");
     }
@@ -117,6 +121,7 @@ public class FoodMenuJFrame extends JFrame {
 					e1.printStackTrace();
 				}
                 e.getWindow().dispose();
+                System.exit(0);
             }
         });
 		
@@ -215,7 +220,7 @@ public class FoodMenuJFrame extends JFrame {
 	   dayMenuIngredientsTable.setModel(ingredientsDayMenuModel);
 	   
 	   JButton createDayMenuButton = new JButton("Create New Day Menu");
-//	   createDayMenuButton.addActionListener(new createDayMenuButtonListener());
+	   createDayMenuButton.addActionListener(new createDayMenuButtonListener());
 	   createDayMenuButton.setFont(new Font("Calibri", Font.BOLD, 14));
 	   createDayMenuButton.setBounds(621, 578, 198, 23);
 	   dayMenusPanel.add(createDayMenuButton);
@@ -287,7 +292,7 @@ public class FoodMenuJFrame extends JFrame {
 	   menuIngredientsTable.setModel(ingredientsMenuItemModel);
 	   
 	   JButton createMenuItemButton = new JButton("Create New Menu Item");
-//	   createMenuItemButton.addActionListener(new createMenuItemButtonListener());
+	   createMenuItemButton.addActionListener(new createMenuItemButtonListener());
 	   createMenuItemButton.setFont(new Font("Calibri", Font.BOLD, 14));
 	   createMenuItemButton.setBounds(621, 578, 198, 23);
 	   menuItemsPanel.add(createMenuItemButton);
@@ -466,7 +471,7 @@ public class FoodMenuJFrame extends JFrame {
 				try {
 					if(foodMenuClient.deleteUser(selectedUser)) {
 						JOptionPane.showMessageDialog(null, "User " + selectedUser.getEmailAddress() + " was successfully deleted!");
-						LOGGER.info(String.format("User %s was successfully deleted by %s", selectedUser.getEmailAddress(), activeUser.getEmailAddress()));
+						LOGGER.info(String.format("User %s was successfully deleted by %s", selectedUser.getEmailAddress(), email));
 						usersModel.setUsers(foodMenuClient.retrieveAllUsers());
 						LOGGER.trace("Retrieving All Users for Users Table");
 						usersModel.fireTableDataChanged();
@@ -484,7 +489,7 @@ public class FoodMenuJFrame extends JFrame {
 				
 			} else {
 				JOptionPane.showMessageDialog(null, "User " + selectedUser.getEmailAddress() + " was not deleted!");
-				LOGGER.trace(String.format("User %s declined to delete the specified user account", activeUser.getEmailAddress()));
+				LOGGER.trace(String.format("User %s declined to delete the specified user account", email));
 			}
 			
 			LOGGER.trace("deleteUserButtonListener Completed");
@@ -546,7 +551,7 @@ public class FoodMenuJFrame extends JFrame {
 				try {
 					if(foodMenuClient.deleteFoodItem(selectedFoodItem)) {
 						JOptionPane.showMessageDialog(null, "Food Item \"" + selectedFoodItem.getFoodName() + "\" was successfully deleted!");
-						LOGGER.info(String.format("User %s successfully deleted FoodItem %s", activeUser.getEmailAddress(), selectedFoodItem.getFoodName()));
+						LOGGER.info(String.format("User %s successfully deleted FoodItem %s", email, selectedFoodItem.getFoodName()));
 
 						LOGGER.trace("Retrieving All FoodItems for FoodItem Tables");
 						ArrayList<FoodItem> foodItems = foodMenuClient.retrieveAllFoodItem(); 
@@ -589,61 +594,62 @@ public class FoodMenuJFrame extends JFrame {
 				}
 			} else {
 				JOptionPane.showMessageDialog(null, "Food Item \"" + selectedFoodItem.getFoodName() + "\" was not deleted!");
-				LOGGER.trace(String.format("User %s declined to delete the specified food item", activeUser.getEmailAddress()));
+				LOGGER.trace(String.format("User %s declined to delete the specified food item", email));
 			}
 			
 			LOGGER.trace("deleteFoodItemButtonListener Completed");
 		}
 	}
 	
-//	class createMenuItemButtonListener implements ActionListener {
-//		public void actionPerformed(ActionEvent e) {
-//			LOGGER.trace("createMenuItemButtonListener Initiated");
-//			CreateMenuItemJFrame createMenuItemJFrame;
-//			
-//			LOGGER.trace("Prompting user with CreateMenuItemJFrame");
-//			createMenuItemJFrame = new CreateMenuItemJFrame();
-//			createMenuItemJFrame.setVisible(true);
-//			
-//			createMenuItemJFrame.addWindowListener(new java.awt.event.WindowAdapter() {
-//				public void windowClosed(java.awt.event.WindowEvent windowEvent) {
-//					LOGGER.trace("CreateMenuItemJFrame closed. Begin refreshing menuItemsTable");
-//					JOptionPane.showMessageDialog(null, "Refreshing Menu Items Table!!");
-//					try {
-//						LOGGER.trace("Retrieving All MenuItems from Database");
-//						menuItemsModel.setMenuItems(menuItemManager.retrieveAllMenuItems());
-//						LOGGER.trace("Refreshing MenuItemsTable");
-//						menuItemsModel.fireTableDataChanged();
-//					} catch (ServiceLoadException | FoodItemServiceException | MenuItemServiceException e) {
-//						e.printStackTrace();
-//						LOGGER.fatal("Unable to retrieve MenuItems from database");
-//					}
-//			        
-//					LOGGER.trace("Selecting first MealName within MealItemTable");
-//					String mealName = menuItemsTable.getModel().getValueAt(0, 0).toString();
-//					LOGGER.debug("MealName:" + mealName);
-//					ArrayList<String> ingredients = new ArrayList<String>();
-//
-//					try {
-//						selectedMenuItem = menuItemManager.retrieveMenuItem(mealName);
-//						foodItemsMenuItemModel.setFoodItems(selectedMenuItem.getFoodList());
-//						foodItemsMenuItemModel.fireTableDataChanged();
-//						menuItemManager.retrieveMenuItem(mealName).getFoodList().forEach(food -> {{
-//							ingredients.addAll(food.getIngredients());
-//						}});
-//						ingredientsMenuItemModel.setFoodItem(ingredients);
-//						LOGGER.debug(String.format("Selected MealItemL MealName:%s", mealName));
-//						ingredientsMenuItemModel.fireTableDataChanged();
-//					} catch (ServiceLoadException | FoodItemServiceException | MenuItemServiceException e1) {
-//						e1.printStackTrace();
-//					}
-//				}
-//			});
-//			
-//			LOGGER.trace("createMenuItemButtonListener Completed");
-//		}
-//	}
-//	
+	class createMenuItemButtonListener implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+			LOGGER.trace("createMenuItemButtonListener Initiated");
+			CreateMenuItemJFrame createMenuItemJFrame;
+			
+			LOGGER.trace("Prompting user with CreateMenuItemJFrame");
+			createMenuItemJFrame = new CreateMenuItemJFrame();
+			createMenuItemJFrame.setupCreateMenuItemJFrame(foodMenuClient);
+			createMenuItemJFrame.setVisible(true);
+			
+			createMenuItemJFrame.addWindowListener(new java.awt.event.WindowAdapter() {
+				public void windowClosed(java.awt.event.WindowEvent windowEvent) {
+					LOGGER.trace("CreateMenuItemJFrame closed. Begin refreshing menuItemsTable");
+					JOptionPane.showMessageDialog(null, "Refreshing Menu Items Table!!");
+					try {
+						LOGGER.trace("Retrieving All MenuItems from Database");
+						menuItemsModel.setMenuItems(foodMenuClient.retrieveAllMenuItem());
+						LOGGER.trace("Refreshing MenuItemsTable");
+						menuItemsModel.fireTableDataChanged();
+					} catch (ClassNotFoundException | IOException e)  {
+						e.printStackTrace();
+						LOGGER.fatal("Unable to retrieve MenuItems from database");
+					}
+			        
+					LOGGER.trace("Selecting first MealName within MealItemTable");
+					String mealName = menuItemsTable.getModel().getValueAt(0, 0).toString();
+					LOGGER.debug("MealName:" + mealName);
+					ArrayList<String> ingredients = new ArrayList<String>();
+
+					try {
+						selectedMenuItem = foodMenuClient.retrieveMenuItem(mealName);
+						foodItemsMenuItemModel.setFoodItems(selectedMenuItem.getFoodList());
+						foodItemsMenuItemModel.fireTableDataChanged();
+						foodMenuClient.retrieveMenuItem(mealName).getFoodList().forEach(food -> {{
+							ingredients.addAll(food.getIngredients());
+						}});
+						ingredientsMenuItemModel.setFoodItem(ingredients);
+						LOGGER.debug(String.format("Selected MealItemL MealName:%s", mealName));
+						ingredientsMenuItemModel.fireTableDataChanged();
+					} catch (ClassNotFoundException | IOException e1)  {
+						e1.printStackTrace();
+					}
+				}
+			});
+			
+			LOGGER.trace("createMenuItemButtonListener Completed");
+		}
+	}
+	
 	class deleteMenuItemButtonListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			LOGGER.trace("deleteMenuItemButtonListener Initiated");
@@ -654,7 +660,7 @@ public class FoodMenuJFrame extends JFrame {
 				try {
 					if(foodMenuClient.deleteMenuItem(selectedMenuItem)) {
 						JOptionPane.showMessageDialog(null, "Menu Item \"" + selectedMenuItem.getMealName() + "\" was successfully deleted!");
-						LOGGER.info(String.format("User %s successfully deleted MenuItem %s", activeUser.getEmailAddress(), selectedMenuItem.getMealName()));
+						LOGGER.info(String.format("User %s successfully deleted MenuItem %s", email, selectedMenuItem.getMealName()));
 						
 						LOGGER.trace("Retrieving All MenuItems for MenuItem Tables");
 						ArrayList<MenuItem> menuItems = foodMenuClient.retrieveAllMenuItem(); 
@@ -701,43 +707,43 @@ public class FoodMenuJFrame extends JFrame {
 				}
 			} else {
 				JOptionPane.showMessageDialog(null, "Menu Item \"" + selectedMenuItem.getMealName() + "\" was not deleted!");
-				LOGGER.trace(String.format("User %s declined to delete the specified menu item", activeUser.getEmailAddress()));
+				LOGGER.trace(String.format("User %s declined to delete the specified menu item", email));
 			}
 			
 			LOGGER.trace("deleteMenuItemButtonListener Completed");
 		}
 	}
 	
-//	class createDayMenuButtonListener implements ActionListener {
-//		public void actionPerformed(ActionEvent e) {
-//			LOGGER.trace("createDayMenuButtonListener Initiated");
-//			CreateDayMenuJFrame createDayMenuJFrame;
-//			
-//			LOGGER.trace("Prompting user with CreateDayMenuJFrame");
-//			createDayMenuJFrame = new CreateDayMenuJFrame();
-//			createDayMenuJFrame.setVisible(true);
-//			
-//			createDayMenuJFrame.addWindowListener(new java.awt.event.WindowAdapter() {
-//				public void windowClosed(java.awt.event.WindowEvent windowEvent) {
-//					LOGGER.trace("CreateDayMenuJFrame closed. Begin refreshing DayMenusTable");
-//					JOptionPane.showMessageDialog(null, "Refreshing Day Menu Table!!");
-//					try {
-//						LOGGER.trace("Retrieving All DayMenus from Database");
-//						dayMenuModel.setDayMenus(dayMenuManager.retrieveAllDayMenus());
-//						dayMenuModel.fireTableDataChanged();
-//					} catch (ServiceLoadException | DayMenuServiceException | MenuItemServiceException
-//							| FoodItemServiceException e) {
-//						e.printStackTrace();
-//						LOGGER.fatal("Unable to retrieve DayMenus from database");
-//					}
-//					
-//				}
-//			});
-//			
-//			LOGGER.trace("createDayMenuButtonListener Completed");
-//		}
-//	}
-//	
+	class createDayMenuButtonListener implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+			LOGGER.trace("createDayMenuButtonListener Initiated");
+			CreateDayMenuJFrame createDayMenuJFrame;
+			
+			LOGGER.trace("Prompting user with CreateDayMenuJFrame");
+			createDayMenuJFrame = new CreateDayMenuJFrame();
+			createDayMenuJFrame.setupCreateDayMenuJFrame(foodMenuClient);
+			createDayMenuJFrame.setVisible(true);
+			
+			createDayMenuJFrame.addWindowListener(new java.awt.event.WindowAdapter() {
+				public void windowClosed(java.awt.event.WindowEvent windowEvent) {
+					LOGGER.trace("CreateDayMenuJFrame closed. Begin refreshing DayMenusTable");
+					JOptionPane.showMessageDialog(null, "Refreshing Day Menu Table!!");
+					try {
+						LOGGER.trace("Retrieving All DayMenus from Database");
+						dayMenuModel.setDayMenus(foodMenuClient.retrieveAllDayMenu());
+						dayMenuModel.fireTableDataChanged();
+					} catch (ClassNotFoundException | IOException e)  {
+						e.printStackTrace();
+						LOGGER.fatal("Unable to retrieve DayMenus from database");
+					}
+					
+				}
+			});
+			
+			LOGGER.trace("createDayMenuButtonListener Completed");
+		}
+	}
+	
 	class deleteDayMenuButtonListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			LOGGER.trace("deleteDayMenuButtonListener Initiated");
@@ -748,7 +754,7 @@ public class FoodMenuJFrame extends JFrame {
 				try {
 					if(foodMenuClient.deleteDayMenu(selectedDayMenu)) {
 						JOptionPane.showMessageDialog(null, "Day Menu \"" + selectedDayMenu.getDateString() + "\" was successfully deleted!");
-						LOGGER.info(String.format("User %s  successfully deleted DayMenu %s", activeUser.getEmailAddress(), selectedDayMenu.getDateString()));
+						LOGGER.info(String.format("User %s  successfully deleted DayMenu %s", email, selectedDayMenu.getDateString()));
 	
 						LOGGER.trace("Retrieving All DayMenus for DayMenu Table");
 						ArrayList<DayMenu> dayMenus = foodMenuClient.retrieveAllDayMenu();
@@ -808,7 +814,7 @@ public class FoodMenuJFrame extends JFrame {
 				}
 			} else {
 				JOptionPane.showMessageDialog(null, "Day Menu " + selectedDayMenu.getDateString() + " was not deleted!");
-				LOGGER.trace(String.format("User %s declined to delete the specified day menu", activeUser.getEmailAddress()));
+				LOGGER.trace(String.format("User %s declined to delete the specified day menu", email));
 			}
 			
 			LOGGER.trace("deleteDayMenuButtonListener Completed");

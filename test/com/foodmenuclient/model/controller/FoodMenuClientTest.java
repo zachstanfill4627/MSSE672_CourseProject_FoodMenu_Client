@@ -17,6 +17,7 @@ import com.foodmenu.model.domain.DayMenu;
 import com.foodmenu.model.domain.FoodItem;
 import com.foodmenu.model.domain.MenuItem;
 import com.foodmenu.model.domain.User;
+import com.foodmenuclient.controller.AuthenticationClient;
 import com.foodmenuclient.controller.FoodMenuClient;
 
 public class FoodMenuClientTest {
@@ -48,9 +49,12 @@ public class FoodMenuClientTest {
 		testUser = (User)userObject.readObject();
 		
 		testUser.setPassword("Password");
+		
+		AuthenticationClient authClient = new AuthenticationClient();
+		String sessionKey = authClient.authenticateUser(user.getEmailAddress(), "password");
 
 		
-		foodMenuClient = new FoodMenuClient(user);
+		foodMenuClient = new FoodMenuClient(user.getEmailAddress(), sessionKey);
 		
 		foodMenuClient.openConnection();
 		System.out.println("Connection Opened for Test"); 

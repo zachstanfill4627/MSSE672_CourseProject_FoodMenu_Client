@@ -1,4 +1,4 @@
-package com.foodmenu.view;
+package com.foodmenuclient.view;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -24,14 +24,16 @@ import javax.swing.SwingConstants;
 
 import org.apache.log4j.Logger;
 
-import com.foodmenu.model.business.exceptions.ServiceLoadException;
-import com.foodmenu.model.business.managers.UserManager;
 import com.foodmenu.model.domain.User;
-import com.foodmenu.model.services.exceptions.UserServiceException;
+import com.foodmenuclient.controller.AuthenticationClient;
+import com.foodmenuclient.controller.FoodMenuClient;
 
 public class CreateAccountJFrame extends JFrame {
 	
 	private static Logger LOGGER = Logger.getLogger(CreateAccountJFrame.class);
+	
+	private FoodMenuClient foodMenuClient = null;
+	private AuthenticationClient authClient = new AuthenticationClient();
 	
 	private JTextField emailField;
 	private JPasswordField passwordField;
@@ -41,6 +43,10 @@ public class CreateAccountJFrame extends JFrame {
 	private JTextField recPhraseField;
 	private JSpinner ageSpinner = new JSpinner();
 	private JComboBox userLevelDropdown; 
+	
+	public void setupCreateFoodItemJFrame(FoodMenuClient foodMenuClient) {
+		this.foodMenuClient = foodMenuClient;
+	}
 
 	public CreateAccountJFrame() throws IOException {
 		super("Food Menu Create Account");
@@ -161,22 +167,8 @@ public class CreateAccountJFrame extends JFrame {
 		public void actionPerformed(ActionEvent e) {
 			LOGGER.trace("createButtonListener Initiated");
 			String propertiesFile = "config/application.properties";
-			String adminpasscode;
-			
-			LOGGER.info("Reading Property Files for Admin Password");
-			/** Read Configured Properties */
-			try (InputStream input = new FileInputStream(propertiesFile)) {
-	            Properties prop = new Properties();
-	            prop.load(input);
-	            adminpasscode = prop.getProperty("admin.passcode");
-	            LOGGER.info("Admin Password read from " + propertiesFile + " successfully");
-	            LOGGER.debug("Admin Passcode Set to: \"" + adminpasscode + "\"");
-			} catch (Exception e1) {
-	    		adminpasscode = "MenuAdmin";	
-	    		LOGGER.warn("Error in reading property file password values, setting to default values!");
-	    		LOGGER.debug("Admin Passcode Set to: \"" + adminpasscode + "\"");
-	        }    
-			
+			String adminpasscode ="";
+					
 			String fName = fNameField.getText();
 			String lName = lNameField.getText();
 			String email = emailField.getText();
@@ -202,14 +194,7 @@ public class CreateAccountJFrame extends JFrame {
 			}
 			
 			if(userLevelDropdown.getSelectedItem().toString().equals("admin")) {
-				if(JOptionPane.showInputDialog("Input Pre-Defined Admin Passcode:").equals(adminpasscode)) {
-					role = "admin";
-					LOGGER.info(String.format("NewUser:%s   Set to Administrator Role", email));
-				} else {
-					JOptionPane.showMessageDialog(null, "Pre-Defined Admin Passcode incorrect, Downgrading to Role = User");
-					role = "user";
-					LOGGER.warn(String.format("NewUser:%s   Failed AdminPassword Check -- Set to User Role", email));
-				}
+				adminpasscode = JOptionPane.showInputDialog("Input Pre-Defined Admin Passcode:");
 			} 
 			
 			
@@ -218,33 +203,42 @@ public class CreateAccountJFrame extends JFrame {
 			LOGGER.debug(user.toString());
 			
 			LOGGER.trace("Instantiating UserManager");
-			UserManager userManager = new UserManager();
 			LOGGER.trace("Completed Instantiating UserManager");
 			
 			try {
 				LOGGER.trace(String.format("Attempting to add User %s to Users Database", email));
-				if(userManager.addNewUser(user)) {
-					try {
-						JOptionPane.showMessageDialog(null, "User Account Created!\nUsername = " + email);
-						LOGGER.info(String.format("User Account %s Added to Users Database Table", email));
-					} catch (Exception e1) {
-						LOGGER.fatal(String.format("User Account %s unable to be added to Users Database Table", email));
-						e1.printStackTrace();
-					}
-					setVisible(false);
-					LOGGER.trace("Set Window Visibility to False");
-					dispose();
-				} else {
-					if(!userManager.isValidPassword(password)) {
-						JOptionPane.showMessageDialog(null, "Password not Strong Enough!\n\nSee Administrator for password complexity requirements!");
-						LOGGER.error(String.format("New User %s passwords are invalid passwords as defined by the password complexity requirements!" , email));
+				if(foodMenuClient != null) {
+					if(foodMenuClient.createUser(user)) {
+						try {
+							JOptionPane.showMessageDialog(null, "User Account Created!\nUsername = " + email);
+							LOGGER.info(String.format("User Account %s Added to Users Database Table", email));
+						} catch (Exception e1) {
+							LOGGER.fatal(String.format("User Account %s unable to be added to Users Database Table", email));
+							e1.printStackTrace();
+						}
+						setVisible(false);
+						LOGGER.trace("Set Window Visibility to False");
+						dispose();
 					} else {
-						JOptionPane.showMessageDialog(null, "Problem with User Account Creation!");
-						LOGGER.fatal(String.format("User %s Account unable to be added to Users Database Table", email));
+						LOGGER.fatal(String.format("User Account %s unable to be added to Users Database Table", email));
 					}
-					return;
+				} else {
+					if(authClient.createUser(user, adminpasscode)) {
+						try {
+							JOptionPane.showMessageDialog(null, "User Account Created!\nUsername = " + email);
+							LOGGER.info(String.format("User Account %s Added to Users Database Table", email));
+						} catch (Exception e1) {
+							LOGGER.fatal(String.format("User Account %s unable to be added to Users Database Table", email));
+							e1.printStackTrace();
+						}
+						setVisible(false);
+						LOGGER.trace("Set Window Visibility to False");
+						dispose();
+					} else {
+						LOGGER.fatal(String.format("User Account %s unable to be added to Users Database Table", email));
+					}
 				}
-			} catch (ServiceLoadException | UserServiceException | HeadlessException | IOException e1) {
+			} catch (Exception e1) {
 				e1.printStackTrace();
 			}
 		}
