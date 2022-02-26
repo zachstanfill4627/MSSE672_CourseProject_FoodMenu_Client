@@ -9,7 +9,11 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 import com.foodmenu.model.domain.*;
+import com.foodmenuclient.model.services.networkservice.NetworkClient;
 
 public class FoodMenuClient {
 	
@@ -34,8 +38,15 @@ public class FoodMenuClient {
 			throw new Exception ("FoodMenuClient.openConnection: Cannot open connection because no users has been set!");
 		}
 		
+		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+		NetworkClient appSvrNetClient = (NetworkClient)context.getBean("appSvrNetCfg");
+		int destPort = Integer.parseInt(appSvrNetClient.getPort("port"));
+		String destHost = appSvrNetClient.getIP("IP");
+		
+		
+		
 		// establish a connection by providing host and port number
-        this.socket = new Socket("localhost", 40010);
+		this.socket = new Socket(destHost, destPort);
         // get the input stream from the connected socket
         this.outputStream = socket.getOutputStream();
         this.inputStream = socket.getInputStream();

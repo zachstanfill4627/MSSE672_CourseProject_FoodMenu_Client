@@ -175,7 +175,7 @@ public class CreateAccountJFrame extends JFrame {
 			String recPhrase = recPhraseField.getText();
 			String password = "";
 			int age = (int) ageSpinner.getValue();
-			String role = "user";
+			String role = userLevelDropdown.getSelectedItem().toString();
 			LOGGER.info("Read Create User Fields");
 			LOGGER.debug(String.format("Create User Form Values: Firstname:%s   "
 					+ "LastName:%s   Email:%s   RecoveryPhrase:%s   "

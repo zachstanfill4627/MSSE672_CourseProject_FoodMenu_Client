@@ -1,11 +1,270 @@
-2022-02-13 13:59:44,166 [main] INFO  com.foodmenuclient.view.MainUI - Loaded Log4J Properties from config\log4j2.properties
-2022-02-13 13:59:44,172 [main] INFO  com.foodmenuclient.view.MainUI - Starting Application
-2022-02-13 13:59:44,411 [main] INFO  com.foodmenuclient.view.LoginJFrame - LoginJFrame Class Instantiated
-2022-02-13 14:03:11,164 [main] WARN  org.springframework.context.support.ClassPathXmlApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [com.myapplication.model.services.logservice.LogServer] for bean with name 'logCfg' defined in class path resource [applicationContext.xml]; nested exception is java.lang.ClassNotFoundException: com.myapplication.model.services.logservice.LogServer
-2022-02-13 14:04:02,123 [main] INFO  com.foodmenuclient.view.MainUI - Loaded Log4J Properties from G:\My Drive\Stanfill_Files\Other_Documents\Zach\Regis University\Graduate\Classes\Programming\my_json_application\config\log4j2.properties
-2022-02-13 14:04:02,129 [main] INFO  com.foodmenuclient.view.MainUI - Starting Application
-2022-02-13 14:04:02,356 [main] INFO  com.foodmenuclient.view.LoginJFrame - LoginJFrame Class Instantiated
-2022-02-13 14:05:46,152 [main] INFO  com.foodmenuclient.view.MainUI - Loaded Log4J Properties from G:\My Drive\Stanfill_Files\Other_Documents\Zach\Regis University\Graduate\Classes\Programming\my_json_application\config\log4j2.properties
-2022-02-13 14:05:46,391 [main] INFO  com.foodmenuclient.view.LoginJFrame - LoginJFrame Class Instantiated
-2022-02-13 14:06:05,534 [main] INFO  com.foodmenuclient.view.MainUI - Loaded Log4J Properties from G:\My Drive\Stanfill_Files\Other_Documents\Zach\Regis University\Graduate\Classes\Programming\my_json_application\config\log4j2.properties
-2022-02-13 14:06:05,770 [main] INFO  com.foodmenuclient.view.LoginJFrame - LoginJFrame Class Instantiated
+2022-02-26 09:10:26,444 [main] WARN  org.springframework.context.support.ClassPathXmlApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.CannotLoadBeanClassException: Error loading class [com.foodMenuclient.model.services.networkservice.NetworkClient] for bean with name 'authSvrNetCfg' defined in class path resource [applicationContext.xml]: problem with class file or dependent class; nested exception is java.lang.NoClassDefFoundError: com/foodmenuclient/model/services/networkservice/NetworkClient (wrong name: com/foodMenuclient/model/services/networkservice/NetworkClient)
+2022-02-26 09:12:03,518 [main] INFO  com.foodmenuclient.view.MainUI - Loaded Log4J Properties from G:\My Drive\Stanfill_Files\Other_Documents\Zach\Regis University\Graduate\Classes\Programming\my_json_application\config\log4j2.properties
+2022-02-26 09:12:04,179 [main] INFO  com.foodmenuclient.view.LoginJFrame - LoginJFrame Class Instantiated
+2022-02-26 09:12:14,455 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.LoginJFrame - Attempting to Authenticate User zstanfill@regis.edu
+2022-02-26 09:12:17,604 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.LoginJFrame - Authentication Succeeded for User zstanfill@regis.edu
+2022-02-26 09:12:17,821 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.FoodMenuJFrame - FoodMenuJFrame Instantiated
+2022-02-26 09:12:17,821 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.FoodMenuJFrame - Set User zstanfill@regis.edu for Session
+2022-02-26 09:12:18,550 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.FoodMenuJFrame - Successfully retrieved Users for User zstanfill@regis.edu session
+2022-02-26 09:12:18,752 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.FoodMenuJFrame - Successfully retrieved FoodItems for User zstanfill@regis.edu session
+2022-02-26 09:12:19,059 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.FoodMenuJFrame - Successfully retrieved MenuItems for User zstanfill@regis.edu session
+2022-02-26 09:12:19,381 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.FoodMenuJFrame - Successfully retrieved DayMenus for User zstanfill@regis.edu session
+2022-02-26 09:12:19,381 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.LoginJFrame - FoodMenuJFrame User set for User zstanfill@regis.edu
+2022-02-26 09:56:39,605 [main] INFO  com.foodmenuclient.view.MainUI - Loaded Log4J Properties from G:\My Drive\Stanfill_Files\Other_Documents\Zach\Regis University\Graduate\Classes\Programming\my_json_application\config\log4j2.properties
+2022-02-26 09:56:39,844 [main] INFO  com.foodmenuclient.view.LoginJFrame - LoginJFrame Class Instantiated
+2022-02-26 09:56:48,289 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.LoginJFrame - Attempting to Authenticate User zstanfill@regis.edu
+2022-02-26 09:56:54,224 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.LoginJFrame - Authentication Succeeded for User zstanfill@regis.edu
+2022-02-26 09:56:54,371 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.FoodMenuJFrame - FoodMenuJFrame Instantiated
+2022-02-26 09:56:54,372 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.FoodMenuJFrame - Set User zstanfill@regis.edu for Session
+2022-02-26 09:56:54,999 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.FoodMenuJFrame - Successfully retrieved Users for User zstanfill@regis.edu session
+2022-02-26 09:56:55,198 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.FoodMenuJFrame - Successfully retrieved FoodItems for User zstanfill@regis.edu session
+2022-02-26 09:56:55,481 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.FoodMenuJFrame - Successfully retrieved MenuItems for User zstanfill@regis.edu session
+2022-02-26 09:56:55,798 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.FoodMenuJFrame - Successfully retrieved DayMenus for User zstanfill@regis.edu session
+2022-02-26 09:56:55,798 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.LoginJFrame - FoodMenuJFrame User set for User zstanfill@regis.edu
+2022-02-26 09:57:43,368 [main] INFO  com.foodmenuclient.view.MainUI - Loaded Log4J Properties from G:\My Drive\Stanfill_Files\Other_Documents\Zach\Regis University\Graduate\Classes\Programming\my_json_application\config\log4j2.properties
+2022-02-26 09:57:43,604 [main] INFO  com.foodmenuclient.view.LoginJFrame - LoginJFrame Class Instantiated
+2022-02-26 09:57:44,565 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.CreateAccountJFrame - CreateAccountJFrame Class Instantiated
+2022-02-26 09:58:12,892 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.CreateAccountJFrame - Read Create User Fields
+2022-02-26 09:58:12,892 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.CreateAccountJFrame - Passwords Match
+2022-02-26 09:58:12,897 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.CreateAccountJFrame - New User zach.stanfill4627@gmail.com Object Instantiated
+2022-02-26 09:59:56,047 [main] INFO  com.foodmenuclient.view.MainUI - Loaded Log4J Properties from G:\My Drive\Stanfill_Files\Other_Documents\Zach\Regis University\Graduate\Classes\Programming\my_json_application\config\log4j2.properties
+2022-02-26 09:59:56,281 [main] INFO  com.foodmenuclient.view.LoginJFrame - LoginJFrame Class Instantiated
+2022-02-26 09:59:58,026 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.CreateAccountJFrame - CreateAccountJFrame Class Instantiated
+2022-02-26 10:00:17,910 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.CreateAccountJFrame - Read Create User Fields
+2022-02-26 10:00:17,911 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.CreateAccountJFrame - Passwords Match
+2022-02-26 10:00:17,915 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.CreateAccountJFrame - New User zach.stanfill4627@gmail.com Object Instantiated
+2022-02-26 10:02:59,794 [main] INFO  com.foodmenuclient.view.MainUI - Loaded Log4J Properties from G:\My Drive\Stanfill_Files\Other_Documents\Zach\Regis University\Graduate\Classes\Programming\my_json_application\config\log4j2.properties
+2022-02-26 10:03:00,032 [main] INFO  com.foodmenuclient.view.LoginJFrame - LoginJFrame Class Instantiated
+2022-02-26 10:03:05,081 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.CreateAccountJFrame - CreateAccountJFrame Class Instantiated
+2022-02-26 10:03:25,766 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.CreateAccountJFrame - Read Create User Fields
+2022-02-26 10:03:25,766 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.CreateAccountJFrame - Passwords Match
+2022-02-26 10:03:25,775 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.CreateAccountJFrame - New User zach.stanfill4627@gmail.com Object Instantiated
+2022-02-26 10:03:29,213 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.CreateAccountJFrame - User Account zach.stanfill4627@gmail.com Added to Users Database Table
+2022-02-26 10:04:03,322 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.LoginJFrame - Attempting to Authenticate User zstanfill@regis.edu
+2022-02-26 10:04:04,767 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.LoginJFrame - Authentication Succeeded for User zstanfill@regis.edu
+2022-02-26 10:04:04,882 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.FoodMenuJFrame - FoodMenuJFrame Instantiated
+2022-02-26 10:04:04,882 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.FoodMenuJFrame - Set User zstanfill@regis.edu for Session
+2022-02-26 10:04:05,507 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.FoodMenuJFrame - Successfully retrieved Users for User zstanfill@regis.edu session
+2022-02-26 10:04:05,715 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.FoodMenuJFrame - Successfully retrieved FoodItems for User zstanfill@regis.edu session
+2022-02-26 10:04:06,004 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.FoodMenuJFrame - Successfully retrieved MenuItems for User zstanfill@regis.edu session
+2022-02-26 10:04:06,322 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.FoodMenuJFrame - Successfully retrieved DayMenus for User zstanfill@regis.edu session
+2022-02-26 10:04:06,322 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.LoginJFrame - FoodMenuJFrame User set for User zstanfill@regis.edu
+2022-02-26 10:04:14,594 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.FoodMenuJFrame - User zach.stanfill4627@gmail.com was successfully deleted by zstanfill@regis.edu
+2022-02-26 10:19:12,957 [main] INFO  com.foodmenuclient.view.MainUI - Loaded Log4J Properties from G:\My Drive\Stanfill_Files\Other_Documents\Zach\Regis University\Graduate\Classes\Programming\my_json_application\config\log4j2.properties
+2022-02-26 10:19:13,202 [main] INFO  com.foodmenuclient.view.LoginJFrame - LoginJFrame Class Instantiated
+2022-02-26 10:19:16,748 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.CreateAccountJFrame - CreateAccountJFrame Class Instantiated
+2022-02-26 10:19:34,210 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.CreateAccountJFrame - Read Create User Fields
+2022-02-26 10:19:35,986 [AWT-EventQueue-0] ERROR com.foodmenuclient.view.CreateAccountJFrame - Create User Form -- Passwords don't Match. Cannot Continue with User Creation.
+2022-02-26 10:19:45,939 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.CreateAccountJFrame - Read Create User Fields
+2022-02-26 10:19:45,940 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.CreateAccountJFrame - Passwords Match
+2022-02-26 10:19:45,949 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.CreateAccountJFrame - New User zach.stanfill4627@gmail.com Object Instantiated
+2022-02-26 10:19:52,174 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.CreateAccountJFrame - User Account zach.stanfill4627@gmail.com Added to Users Database Table
+2022-02-26 10:59:34,899 [main] INFO  com.foodmenuclient.view.MainUI - Loaded Log4J Properties from G:\My Drive\Stanfill_Files\Other_Documents\Zach\Regis University\Graduate\Classes\Programming\my_json_application\config\log4j2.properties
+2022-02-26 10:59:35,148 [main] INFO  com.foodmenuclient.view.LoginJFrame - LoginJFrame Class Instantiated
+2022-02-26 10:59:36,502 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.CreateAccountJFrame - CreateAccountJFrame Class Instantiated
+2022-02-26 11:00:44,992 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.CreateAccountJFrame - Read Create User Fields
+2022-02-26 11:00:44,993 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.CreateAccountJFrame - Passwords Match
+2022-02-26 11:00:53,964 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.CreateAccountJFrame - New User zach.stanfill4627@gmail.com Object Instantiated
+2022-02-26 11:01:28,026 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.CreateAccountJFrame - User Account zach.stanfill4627@gmail.com Added to Users Database Table
+2022-02-26 11:02:03,016 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.LoginJFrame - Attempting to Authenticate User zach.stanfill4627@gmail.com
+2022-02-26 11:02:04,736 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.LoginJFrame - Authentication Succeeded for User zach.stanfill4627@gmail.com
+2022-02-26 11:02:04,873 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.FoodMenuJFrame - FoodMenuJFrame Instantiated
+2022-02-26 11:02:04,873 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.FoodMenuJFrame - Set User zach.stanfill4627@gmail.com for Session
+2022-02-26 11:02:05,529 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.FoodMenuJFrame - Successfully retrieved Users for User zach.stanfill4627@gmail.com session
+2022-02-26 11:02:05,732 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.FoodMenuJFrame - Successfully retrieved FoodItems for User zach.stanfill4627@gmail.com session
+2022-02-26 11:02:06,032 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.FoodMenuJFrame - Successfully retrieved MenuItems for User zach.stanfill4627@gmail.com session
+2022-02-26 11:02:06,347 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.FoodMenuJFrame - Successfully retrieved DayMenus for User zach.stanfill4627@gmail.com session
+2022-02-26 11:02:06,348 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.LoginJFrame - FoodMenuJFrame User set for User zach.stanfill4627@gmail.com
+2022-02-26 11:05:03,257 [main] DEBUG org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@6057aebb
+2022-02-26 11:05:03,433 [main] DEBUG org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loaded 3 bean definitions from class path resource [applicationContext.xml]
+2022-02-26 11:05:03,481 [main] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'logCfg'
+2022-02-26 11:05:03,540 [main] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'authSvrNetCfg'
+2022-02-26 11:05:03,542 [main] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'appSvrNetCfg'
+2022-02-26 11:05:03,556 [main] INFO  com.foodmenuclient.view.MainUI - Loaded Log4J Properties from G:\My Drive\Stanfill_Files\Other_Documents\Zach\Regis University\Graduate\Classes\Programming\my_json_application\config\log4j2.properties
+2022-02-26 11:05:03,780 [main] INFO  com.foodmenuclient.view.LoginJFrame - LoginJFrame Class Instantiated
+2022-02-26 11:05:05,412 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.CreateAccountJFrame - CreateAccountJFrame Class Instantiated
+2022-02-26 11:05:28,785 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.CreateAccountJFrame - Read Create User Fields
+2022-02-26 11:05:28,786 [AWT-EventQueue-0] DEBUG com.foodmenuclient.view.CreateAccountJFrame - Create User Form Values: Firstname:zachary   LastName:stanfill   Email:zach.stanfill4627@gmail.com   RecoveryPhrase:software engineer   Age:29   Role:user.
+2022-02-26 11:05:28,787 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.CreateAccountJFrame - Passwords Match
+2022-02-26 11:05:33,578 [AWT-EventQueue-0] DEBUG com.foodmenu.model.domain.User - User Object Instantiated -- FirstName:zachary   LastName:stanfill   Email:zach.stanfill4627@gmail.com   RecoveryPhrase:software engineer   Age:29   Role:user
+2022-02-26 11:05:33,579 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.CreateAccountJFrame - New User zach.stanfill4627@gmail.com Object Instantiated
+2022-02-26 11:05:33,579 [AWT-EventQueue-0] DEBUG com.foodmenuclient.view.CreateAccountJFrame - com.foodmenu.model.domain.User@49a407d2
+2022-02-26 11:05:36,530 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.CreateAccountJFrame - User Account zach.stanfill4627@gmail.com Added to Users Database Table
+2022-02-26 11:07:32,670 [main] DEBUG org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@6057aebb
+2022-02-26 11:07:32,833 [main] DEBUG org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loaded 3 bean definitions from class path resource [applicationContext.xml]
+2022-02-26 11:07:32,879 [main] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'logCfg'
+2022-02-26 11:07:32,936 [main] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'authSvrNetCfg'
+2022-02-26 11:07:32,938 [main] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'appSvrNetCfg'
+2022-02-26 11:07:32,953 [main] INFO  com.foodmenuclient.view.MainUI - Loaded Log4J Properties from G:\My Drive\Stanfill_Files\Other_Documents\Zach\Regis University\Graduate\Classes\Programming\my_json_application\config\log4j2.properties
+2022-02-26 11:07:33,185 [main] INFO  com.foodmenuclient.view.LoginJFrame - LoginJFrame Class Instantiated
+2022-02-26 11:07:34,505 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.CreateAccountJFrame - CreateAccountJFrame Class Instantiated
+2022-02-26 11:07:58,194 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.CreateAccountJFrame - Read Create User Fields
+2022-02-26 11:07:58,195 [AWT-EventQueue-0] DEBUG com.foodmenuclient.view.CreateAccountJFrame - Create User Form Values: Firstname:zachary   LastName:stanfill   Email:zach.stanfill4627@gmail.com   RecoveryPhrase:software engineer   Age:29   Role:user.
+2022-02-26 11:07:58,195 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.CreateAccountJFrame - Passwords Match
+2022-02-26 11:08:05,649 [AWT-EventQueue-0] DEBUG com.foodmenu.model.domain.User - User Object Instantiated -- FirstName:zachary   LastName:stanfill   Email:zach.stanfill4627@gmail.com   RecoveryPhrase:software engineer   Age:29   Role:user
+2022-02-26 11:08:05,650 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.CreateAccountJFrame - New User zach.stanfill4627@gmail.com Object Instantiated
+2022-02-26 11:08:05,650 [AWT-EventQueue-0] DEBUG com.foodmenuclient.view.CreateAccountJFrame - com.foodmenu.model.domain.User@f0476fb
+2022-02-26 11:08:09,423 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.CreateAccountJFrame - User Account zach.stanfill4627@gmail.com Added to Users Database Table
+2022-02-26 11:09:42,623 [main] DEBUG org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@6057aebb
+2022-02-26 11:09:42,781 [main] DEBUG org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loaded 3 bean definitions from class path resource [applicationContext.xml]
+2022-02-26 11:09:42,828 [main] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'logCfg'
+2022-02-26 11:09:42,884 [main] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'authSvrNetCfg'
+2022-02-26 11:09:42,886 [main] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'appSvrNetCfg'
+2022-02-26 11:09:42,901 [main] INFO  com.foodmenuclient.view.MainUI - Loaded Log4J Properties from G:\My Drive\Stanfill_Files\Other_Documents\Zach\Regis University\Graduate\Classes\Programming\my_json_application\config\log4j2.properties
+2022-02-26 11:09:43,144 [main] INFO  com.foodmenuclient.view.LoginJFrame - LoginJFrame Class Instantiated
+2022-02-26 11:09:44,986 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.CreateAccountJFrame - CreateAccountJFrame Class Instantiated
+2022-02-26 11:10:05,071 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.CreateAccountJFrame - Read Create User Fields
+2022-02-26 11:10:05,071 [AWT-EventQueue-0] DEBUG com.foodmenuclient.view.CreateAccountJFrame - Create User Form Values: Firstname:zachary   LastName:stanfill   Email:zach.stanfill467@gmail.com   RecoveryPhrase:ghostbuster   Age:29   Role:user.
+2022-02-26 11:10:05,072 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.CreateAccountJFrame - Passwords Match
+2022-02-26 11:10:10,706 [AWT-EventQueue-0] DEBUG com.foodmenu.model.domain.User - User Object Instantiated -- FirstName:zachary   LastName:stanfill   Email:zach.stanfill467@gmail.com   RecoveryPhrase:ghostbuster   Age:29   Role:user
+2022-02-26 11:10:10,707 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.CreateAccountJFrame - New User zach.stanfill467@gmail.com Object Instantiated
+2022-02-26 11:10:10,707 [AWT-EventQueue-0] DEBUG com.foodmenuclient.view.CreateAccountJFrame - com.foodmenu.model.domain.User@146a5ffe
+2022-02-26 11:10:21,970 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.CreateAccountJFrame - User Account zach.stanfill467@gmail.com Added to Users Database Table
+2022-02-26 11:14:48,381 [main] DEBUG org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@6057aebb
+2022-02-26 11:14:48,542 [main] DEBUG org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loaded 3 bean definitions from class path resource [applicationContext.xml]
+2022-02-26 11:14:48,589 [main] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'logCfg'
+2022-02-26 11:14:48,649 [main] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'authSvrNetCfg'
+2022-02-26 11:14:48,651 [main] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'appSvrNetCfg'
+2022-02-26 11:14:48,666 [main] INFO  com.foodmenuclient.view.MainUI - Loaded Log4J Properties from G:\My Drive\Stanfill_Files\Other_Documents\Zach\Regis University\Graduate\Classes\Programming\my_json_application\config\log4j2.properties
+2022-02-26 11:14:48,901 [main] INFO  com.foodmenuclient.view.LoginJFrame - LoginJFrame Class Instantiated
+2022-02-26 11:14:53,402 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.CreateAccountJFrame - CreateAccountJFrame Class Instantiated
+2022-02-26 11:15:15,089 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.CreateAccountJFrame - Read Create User Fields
+2022-02-26 11:15:15,090 [AWT-EventQueue-0] DEBUG com.foodmenuclient.view.CreateAccountJFrame - Create User Form Values: Firstname:zachary   LastName:stanfill   Email:zach.stanfill4627@gmail.com   RecoveryPhrase:1234   Age:29   Role:user.
+2022-02-26 11:15:15,090 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.CreateAccountJFrame - Passwords Match
+2022-02-26 11:15:20,987 [AWT-EventQueue-0] DEBUG com.foodmenu.model.domain.User - User Object Instantiated -- FirstName:zachary   LastName:stanfill   Email:zach.stanfill4627@gmail.com   RecoveryPhrase:1234   Age:29   Role:user
+2022-02-26 11:15:20,987 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.CreateAccountJFrame - New User zach.stanfill4627@gmail.com Object Instantiated
+2022-02-26 11:15:20,988 [AWT-EventQueue-0] DEBUG com.foodmenuclient.view.CreateAccountJFrame - com.foodmenu.model.domain.User@f0476fb
+2022-02-26 11:15:28,576 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.CreateAccountJFrame - User Account zach.stanfill4627@gmail.com Added to Users Database Table
+2022-02-26 11:16:38,946 [main] DEBUG org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@6057aebb
+2022-02-26 11:16:39,118 [main] DEBUG org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loaded 3 bean definitions from class path resource [applicationContext.xml]
+2022-02-26 11:16:39,163 [main] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'logCfg'
+2022-02-26 11:16:39,222 [main] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'authSvrNetCfg'
+2022-02-26 11:16:39,224 [main] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'appSvrNetCfg'
+2022-02-26 11:16:39,238 [main] INFO  com.foodmenuclient.view.MainUI - Loaded Log4J Properties from G:\My Drive\Stanfill_Files\Other_Documents\Zach\Regis University\Graduate\Classes\Programming\my_json_application\config\log4j2.properties
+2022-02-26 11:16:39,460 [main] INFO  com.foodmenuclient.view.LoginJFrame - LoginJFrame Class Instantiated
+2022-02-26 11:16:41,114 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.CreateAccountJFrame - CreateAccountJFrame Class Instantiated
+2022-02-26 11:17:02,993 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.CreateAccountJFrame - Read Create User Fields
+2022-02-26 11:17:02,994 [AWT-EventQueue-0] DEBUG com.foodmenuclient.view.CreateAccountJFrame - Create User Form Values: Firstname:zach   LastName:stanfill   Email:zach.stanfill4627@gmail.com   RecoveryPhrase:ghostbuster   Age:29   Role:user.
+2022-02-26 11:17:02,994 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.CreateAccountJFrame - Passwords Match
+2022-02-26 11:17:07,489 [AWT-EventQueue-0] DEBUG com.foodmenu.model.domain.User - User Object Instantiated -- FirstName:zach   LastName:stanfill   Email:zach.stanfill4627@gmail.com   RecoveryPhrase:ghostbuster   Age:29   Role:user
+2022-02-26 11:17:07,490 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.CreateAccountJFrame - New User zach.stanfill4627@gmail.com Object Instantiated
+2022-02-26 11:17:07,490 [AWT-EventQueue-0] DEBUG com.foodmenuclient.view.CreateAccountJFrame - com.foodmenu.model.domain.User@49a407d2
+2022-02-26 11:17:09,661 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.CreateAccountJFrame - User Account zach.stanfill4627@gmail.com Added to Users Database Table
+2022-02-26 11:19:28,460 [main] DEBUG org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@6057aebb
+2022-02-26 11:19:28,641 [main] DEBUG org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loaded 3 bean definitions from class path resource [applicationContext.xml]
+2022-02-26 11:19:28,687 [main] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'logCfg'
+2022-02-26 11:19:28,745 [main] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'authSvrNetCfg'
+2022-02-26 11:19:28,748 [main] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'appSvrNetCfg'
+2022-02-26 11:19:28,762 [main] INFO  com.foodmenuclient.view.MainUI - Loaded Log4J Properties from G:\My Drive\Stanfill_Files\Other_Documents\Zach\Regis University\Graduate\Classes\Programming\my_json_application\config\log4j2.properties
+2022-02-26 11:19:28,990 [main] INFO  com.foodmenuclient.view.LoginJFrame - LoginJFrame Class Instantiated
+2022-02-26 11:19:30,697 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.CreateAccountJFrame - CreateAccountJFrame Class Instantiated
+2022-02-26 11:19:50,180 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.CreateAccountJFrame - Read Create User Fields
+2022-02-26 11:19:50,180 [AWT-EventQueue-0] DEBUG com.foodmenuclient.view.CreateAccountJFrame - Create User Form Values: Firstname:zach   LastName:stanfill   Email:zsrtan@regis.edu   RecoveryPhrase:1234   Age:29   Role:user.
+2022-02-26 11:19:51,518 [AWT-EventQueue-0] ERROR com.foodmenuclient.view.CreateAccountJFrame - Create User Form -- Passwords don't Match. Cannot Continue with User Creation.
+2022-02-26 11:19:51,519 [AWT-EventQueue-0] DEBUG com.foodmenuclient.view.CreateAccountJFrame - Create User Form -- Password:;assword   ConfirmPassword:password
+2022-02-26 11:19:58,575 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.CreateAccountJFrame - Read Create User Fields
+2022-02-26 11:19:58,581 [AWT-EventQueue-0] DEBUG com.foodmenuclient.view.CreateAccountJFrame - Create User Form Values: Firstname:zach   LastName:stanfill   Email:zsrtan@regis.edu   RecoveryPhrase:1234   Age:29   Role:user.
+2022-02-26 11:19:58,581 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.CreateAccountJFrame - Passwords Match
+2022-02-26 11:20:05,905 [AWT-EventQueue-0] DEBUG com.foodmenu.model.domain.User - User Object Instantiated -- FirstName:zach   LastName:stanfill   Email:zsrtan@regis.edu   RecoveryPhrase:1234   Age:29   Role:user
+2022-02-26 11:20:05,905 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.CreateAccountJFrame - New User zsrtan@regis.edu Object Instantiated
+2022-02-26 11:20:05,905 [AWT-EventQueue-0] DEBUG com.foodmenuclient.view.CreateAccountJFrame - com.foodmenu.model.domain.User@79cf2181
+2022-02-26 11:20:10,523 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.CreateAccountJFrame - User Account zsrtan@regis.edu Added to Users Database Table
+2022-02-26 11:25:50,805 [main] DEBUG org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@6057aebb
+2022-02-26 11:25:50,969 [main] DEBUG org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loaded 3 bean definitions from class path resource [applicationContext.xml]
+2022-02-26 11:25:51,016 [main] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'logCfg'
+2022-02-26 11:25:51,074 [main] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'authSvrNetCfg'
+2022-02-26 11:25:51,076 [main] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'appSvrNetCfg'
+2022-02-26 11:25:51,090 [main] INFO  com.foodmenuclient.view.MainUI - Loaded Log4J Properties from G:\My Drive\Stanfill_Files\Other_Documents\Zach\Regis University\Graduate\Classes\Programming\my_json_application\config\log4j2.properties
+2022-02-26 11:25:51,326 [main] INFO  com.foodmenuclient.view.LoginJFrame - LoginJFrame Class Instantiated
+2022-02-26 11:25:52,831 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.CreateAccountJFrame - CreateAccountJFrame Class Instantiated
+2022-02-26 11:26:21,928 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.CreateAccountJFrame - Read Create User Fields
+2022-02-26 11:26:21,929 [AWT-EventQueue-0] DEBUG com.foodmenuclient.view.CreateAccountJFrame - Create User Form Values: Firstname:zachary   LastName:stanfill   Email:zach.stanfill4627@gmail.com   RecoveryPhrase:software engineer   Age:29   Role:admin.
+2022-02-26 11:26:21,929 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.CreateAccountJFrame - Passwords Match
+2022-02-26 11:26:26,744 [AWT-EventQueue-0] DEBUG com.foodmenu.model.domain.User - User Object Instantiated -- FirstName:zachary   LastName:stanfill   Email:zach.stanfill4627@gmail.com   RecoveryPhrase:software engineer   Age:29   Role:admin
+2022-02-26 11:26:26,744 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.CreateAccountJFrame - New User zach.stanfill4627@gmail.com Object Instantiated
+2022-02-26 11:26:26,744 [AWT-EventQueue-0] DEBUG com.foodmenuclient.view.CreateAccountJFrame - com.foodmenu.model.domain.User@f0476fb
+2022-02-26 11:26:28,623 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.CreateAccountJFrame - User Account zach.stanfill4627@gmail.com Added to Users Database Table
+2022-02-26 11:26:43,585 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.CreateAccountJFrame - CreateAccountJFrame Class Instantiated
+2022-02-26 11:27:12,496 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.CreateAccountJFrame - Read Create User Fields
+2022-02-26 11:27:12,496 [AWT-EventQueue-0] DEBUG com.foodmenuclient.view.CreateAccountJFrame - Create User Form Values: Firstname:zachary   LastName:stanfill   Email:zrstanfill@regis.edu   RecoveryPhrase:ghostbuster   Age:29   Role:admin.
+2022-02-26 11:27:12,497 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.CreateAccountJFrame - Passwords Match
+2022-02-26 11:27:15,256 [AWT-EventQueue-0] DEBUG com.foodmenu.model.domain.User - User Object Instantiated -- FirstName:zachary   LastName:stanfill   Email:zrstanfill@regis.edu   RecoveryPhrase:ghostbuster   Age:29   Role:admin
+2022-02-26 11:27:15,257 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.CreateAccountJFrame - New User zrstanfill@regis.edu Object Instantiated
+2022-02-26 11:27:15,257 [AWT-EventQueue-0] DEBUG com.foodmenuclient.view.CreateAccountJFrame - com.foodmenu.model.domain.User@1fca9306
+2022-02-26 11:27:16,337 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.CreateAccountJFrame - User Account zrstanfill@regis.edu Added to Users Database Table
+2022-02-26 11:49:01,285 [main] DEBUG org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@6057aebb
+2022-02-26 11:49:01,446 [main] DEBUG org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loaded 3 bean definitions from class path resource [applicationContext.xml]
+2022-02-26 11:49:01,493 [main] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'logCfg'
+2022-02-26 11:49:01,549 [main] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'authSvrNetCfg'
+2022-02-26 11:49:01,552 [main] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'appSvrNetCfg'
+2022-02-26 11:49:01,566 [main] INFO  com.foodmenuclient.view.MainUI - Loaded Log4J Properties from G:\My Drive\Stanfill_Files\Other_Documents\Zach\Regis University\Graduate\Classes\Programming\my_json_application\config\log4j2.properties
+2022-02-26 11:49:01,792 [main] INFO  com.foodmenuclient.view.LoginJFrame - LoginJFrame Class Instantiated
+2022-02-26 11:49:09,691 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.LoginJFrame - Attempting to Authenticate User zstanfill@regis.edu
+2022-02-26 11:49:09,692 [AWT-EventQueue-0] DEBUG org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4c50e0e4
+2022-02-26 11:49:09,714 [AWT-EventQueue-0] DEBUG org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loaded 3 bean definitions from class path resource [applicationContext.xml]
+2022-02-26 11:49:09,715 [AWT-EventQueue-0] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'logCfg'
+2022-02-26 11:49:09,716 [AWT-EventQueue-0] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'authSvrNetCfg'
+2022-02-26 11:49:09,716 [AWT-EventQueue-0] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'appSvrNetCfg'
+2022-02-26 11:49:11,646 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.LoginJFrame - Authentication Succeeded for User zstanfill@regis.edu
+2022-02-26 11:49:11,790 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.FoodMenuJFrame - FoodMenuJFrame Instantiated
+2022-02-26 11:49:11,790 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.FoodMenuJFrame - Set User zstanfill@regis.edu for Session
+2022-02-26 11:49:11,794 [AWT-EventQueue-0] DEBUG org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4586a38d
+2022-02-26 11:49:11,811 [AWT-EventQueue-0] DEBUG org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loaded 3 bean definitions from class path resource [applicationContext.xml]
+2022-02-26 11:49:11,812 [AWT-EventQueue-0] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'logCfg'
+2022-02-26 11:49:11,813 [AWT-EventQueue-0] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'authSvrNetCfg'
+2022-02-26 11:49:11,813 [AWT-EventQueue-0] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'appSvrNetCfg'
+2022-02-26 11:52:01,608 [main] DEBUG org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@6057aebb
+2022-02-26 11:52:01,772 [main] DEBUG org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loaded 3 bean definitions from class path resource [applicationContext.xml]
+2022-02-26 11:52:01,822 [main] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'logCfg'
+2022-02-26 11:52:01,880 [main] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'authSvrNetCfg'
+2022-02-26 11:52:01,882 [main] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'appSvrNetCfg'
+2022-02-26 11:52:01,898 [main] INFO  com.foodmenuclient.view.MainUI - Loaded Log4J Properties from G:\My Drive\Stanfill_Files\Other_Documents\Zach\Regis University\Graduate\Classes\Programming\my_json_application\config\log4j2.properties
+2022-02-26 11:52:02,133 [main] INFO  com.foodmenuclient.view.LoginJFrame - LoginJFrame Class Instantiated
+2022-02-26 11:52:13,646 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.LoginJFrame - Attempting to Authenticate User zstanfill@regis.edu
+2022-02-26 11:52:13,646 [AWT-EventQueue-0] DEBUG org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4b603fdf
+2022-02-26 11:52:13,668 [AWT-EventQueue-0] DEBUG org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loaded 3 bean definitions from class path resource [applicationContext.xml]
+2022-02-26 11:52:13,669 [AWT-EventQueue-0] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'logCfg'
+2022-02-26 11:52:13,670 [AWT-EventQueue-0] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'authSvrNetCfg'
+2022-02-26 11:52:13,671 [AWT-EventQueue-0] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'appSvrNetCfg'
+2022-02-26 11:52:15,533 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.LoginJFrame - Authentication Succeeded for User zstanfill@regis.edu
+2022-02-26 11:52:15,656 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.FoodMenuJFrame - FoodMenuJFrame Instantiated
+2022-02-26 11:52:15,656 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.FoodMenuJFrame - Set User zstanfill@regis.edu for Session
+2022-02-26 11:52:15,659 [AWT-EventQueue-0] DEBUG org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4586a38d
+2022-02-26 11:52:15,675 [AWT-EventQueue-0] DEBUG org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loaded 3 bean definitions from class path resource [applicationContext.xml]
+2022-02-26 11:52:15,676 [AWT-EventQueue-0] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'logCfg'
+2022-02-26 11:52:15,677 [AWT-EventQueue-0] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'authSvrNetCfg'
+2022-02-26 11:52:15,678 [AWT-EventQueue-0] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'appSvrNetCfg'
+2022-02-26 11:52:16,288 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.FoodMenuJFrame - Successfully retrieved Users for User zstanfill@regis.edu session
+2022-02-26 11:52:16,490 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.FoodMenuJFrame - Successfully retrieved FoodItems for User zstanfill@regis.edu session
+2022-02-26 11:52:16,864 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.FoodMenuJFrame - Successfully retrieved MenuItems for User zstanfill@regis.edu session
+2022-02-26 11:52:17,157 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.FoodMenuJFrame - Successfully retrieved DayMenus for User zstanfill@regis.edu session
+2022-02-26 11:52:17,158 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.LoginJFrame - FoodMenuJFrame User set for User zstanfill@regis.edu
+2022-02-26 11:52:37,475 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.FoodMenuJFrame - User zach.stanfill4627@gmail.com was successfully deleted by zstanfill@regis.edu
+2022-02-26 11:52:41,323 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.FoodMenuJFrame - User zach.stanfill4627@gmail.com was successfully deleted by zstanfill@regis.edu
+2022-02-26 11:52:48,620 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.FoodMenuJFrame - User zrstanfill@regis.edu was successfully deleted by zstanfill@regis.edu
+2022-02-26 12:03:13,723 [main] DEBUG org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@6057aebb
+2022-02-26 12:03:13,884 [main] DEBUG org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loaded 3 bean definitions from class path resource [applicationContext.xml]
+2022-02-26 12:03:13,930 [main] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'logCfg'
+2022-02-26 12:03:13,987 [main] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'authSvrNetCfg'
+2022-02-26 12:03:13,990 [main] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'appSvrNetCfg'
+2022-02-26 12:03:14,004 [main] INFO  com.foodmenuclient.view.MainUI - Loaded Log4J Properties from G:\My Drive\Stanfill_Files\Other_Documents\Zach\Regis University\Graduate\Classes\Programming\my_json_application\config\log4j2.properties
+2022-02-26 12:03:14,238 [main] INFO  com.foodmenuclient.view.LoginJFrame - LoginJFrame Class Instantiated
+2022-02-26 12:03:23,040 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.LoginJFrame - Attempting to Authenticate User zstanfill@regis.edu
+2022-02-26 12:03:23,041 [AWT-EventQueue-0] DEBUG org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4c50e0e4
+2022-02-26 12:03:23,062 [AWT-EventQueue-0] DEBUG org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loaded 3 bean definitions from class path resource [applicationContext.xml]
+2022-02-26 12:03:23,063 [AWT-EventQueue-0] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'logCfg'
+2022-02-26 12:03:23,064 [AWT-EventQueue-0] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'authSvrNetCfg'
+2022-02-26 12:03:23,064 [AWT-EventQueue-0] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'appSvrNetCfg'
+2022-02-26 12:03:25,442 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.LoginJFrame - Authentication Succeeded for User zstanfill@regis.edu
+2022-02-26 12:03:25,575 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.FoodMenuJFrame - FoodMenuJFrame Instantiated
+2022-02-26 12:03:25,575 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.FoodMenuJFrame - Set User zstanfill@regis.edu for Session
+2022-02-26 12:03:25,579 [AWT-EventQueue-0] DEBUG org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4586a38d
+2022-02-26 12:03:25,596 [AWT-EventQueue-0] DEBUG org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loaded 3 bean definitions from class path resource [applicationContext.xml]
+2022-02-26 12:03:25,597 [AWT-EventQueue-0] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'logCfg'
+2022-02-26 12:03:25,597 [AWT-EventQueue-0] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'authSvrNetCfg'
+2022-02-26 12:03:25,598 [AWT-EventQueue-0] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'appSvrNetCfg'
+2022-02-26 12:03:25,733 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.FoodMenuJFrame - Successfully retrieved Users for User zstanfill@regis.edu session
+2022-02-26 12:03:25,860 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.FoodMenuJFrame - Successfully retrieved FoodItems for User zstanfill@regis.edu session
+2022-02-26 12:03:26,079 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.FoodMenuJFrame - Successfully retrieved MenuItems for User zstanfill@regis.edu session
+2022-02-26 12:03:26,333 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.FoodMenuJFrame - Successfully retrieved DayMenus for User zstanfill@regis.edu session
+2022-02-26 12:03:26,334 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.LoginJFrame - FoodMenuJFrame User set for User zstanfill@regis.edu

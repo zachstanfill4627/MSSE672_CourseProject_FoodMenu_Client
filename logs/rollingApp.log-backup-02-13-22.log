@@ -1,0 +1,11 @@
+2022-02-13 13:59:44,166 [main] INFO  com.foodmenuclient.view.MainUI - Loaded Log4J Properties from config\log4j2.properties
+2022-02-13 13:59:44,172 [main] INFO  com.foodmenuclient.view.MainUI - Starting Application
+2022-02-13 13:59:44,411 [main] INFO  com.foodmenuclient.view.LoginJFrame - LoginJFrame Class Instantiated
+2022-02-13 14:03:11,164 [main] WARN  org.springframework.context.support.ClassPathXmlApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [com.myapplication.model.services.logservice.LogServer] for bean with name 'logCfg' defined in class path resource [applicationContext.xml]; nested exception is java.lang.ClassNotFoundException: com.myapplication.model.services.logservice.LogServer
+2022-02-13 14:04:02,123 [main] INFO  com.foodmenuclient.view.MainUI - Loaded Log4J Properties from G:\My Drive\Stanfill_Files\Other_Documents\Zach\Regis University\Graduate\Classes\Programming\my_json_application\config\log4j2.properties
+2022-02-13 14:04:02,129 [main] INFO  com.foodmenuclient.view.MainUI - Starting Application
+2022-02-13 14:04:02,356 [main] INFO  com.foodmenuclient.view.LoginJFrame - LoginJFrame Class Instantiated
+2022-02-13 14:05:46,152 [main] INFO  com.foodmenuclient.view.MainUI - Loaded Log4J Properties from G:\My Drive\Stanfill_Files\Other_Documents\Zach\Regis University\Graduate\Classes\Programming\my_json_application\config\log4j2.properties
+2022-02-13 14:05:46,391 [main] INFO  com.foodmenuclient.view.LoginJFrame - LoginJFrame Class Instantiated
+2022-02-13 14:06:05,534 [main] INFO  com.foodmenuclient.view.MainUI - Loaded Log4J Properties from G:\My Drive\Stanfill_Files\Other_Documents\Zach\Regis University\Graduate\Classes\Programming\my_json_application\config\log4j2.properties
+2022-02-13 14:06:05,770 [main] INFO  com.foodmenuclient.view.LoginJFrame - LoginJFrame Class Instantiated
