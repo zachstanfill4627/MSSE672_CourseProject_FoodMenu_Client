@@ -400,3 +400,14 @@
 2022-02-26 12:42:25,122 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.FoodMenuJFrame - Successfully retrieved MenuItems for User zstanfill@regis.edu session
 2022-02-26 12:42:25,467 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.FoodMenuJFrame - Successfully retrieved DayMenus for User zstanfill@regis.edu session
 2022-02-26 12:42:25,467 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.LoginJFrame - FoodMenuJFrame User set for User zstanfill@regis.edu
+2022-02-26 12:51:56,322 [main] INFO  com.foodmenuclient.view.MainUI - Loaded Log4J Properties from G:\My Drive\Stanfill_Files\Other_Documents\Zach\Regis University\Graduate\Classes\Programming\my_json_application\config\log4j2.properties
+2022-02-26 12:51:56,561 [main] INFO  com.foodmenuclient.view.LoginJFrame - LoginJFrame Class Instantiated
+2022-02-26 12:52:15,986 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.LoginJFrame - Attempting to Authenticate User zstanfill@regis.edu
+2022-02-26 12:52:18,038 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.LoginJFrame - Authentication Succeeded for User zstanfill@regis.edu
+2022-02-26 12:52:18,176 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.FoodMenuJFrame - FoodMenuJFrame Instantiated
+2022-02-26 12:52:18,176 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.FoodMenuJFrame - Set User zstanfill@regis.edu for Session
+2022-02-26 12:52:18,897 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.FoodMenuJFrame - Successfully retrieved Users for User zstanfill@regis.edu session
+2022-02-26 12:52:19,115 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.FoodMenuJFrame - Successfully retrieved FoodItems for User zstanfill@regis.edu session
+2022-02-26 12:52:19,439 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.FoodMenuJFrame - Successfully retrieved MenuItems for User zstanfill@regis.edu session
+2022-02-26 12:52:19,791 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.FoodMenuJFrame - Successfully retrieved DayMenus for User zstanfill@regis.edu session
+2022-02-26 12:52:19,791 [AWT-EventQueue-0] INFO  com.foodmenuclient.view.LoginJFrame - FoodMenuJFrame User set for User zstanfill@regis.edu
